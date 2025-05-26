@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/uploadFragment">
+
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="com.example.cnn_app.StatisticsFragment"
+        android:label="Statistics" />
+
+    <fragment
+        android:id="@+id/uploadFragment"
+        android:name="com.example.cnn_app.UploadFragment"
+        android:label="Upload" >
+        <action
+            android:id="@+id/action_uploadFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.example.cnn_app.CameraFragment"
+        android:label="Camera">
+
+        <action
+            android:id="@+id/action_cameraFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.cnn_app.ResultFragment"
+        android:label="Result" />
+
+    <fragment
+        android:id="@+id/classesFragment"
+        android:name="com.example.cnn_app.ClassesFragment"
+        android:label="Classes" />
+
+    <action
+        android:id="@+id/action_statisticsFragment_to_classesFragment"
+        app:destination="@id/classesFragment" />
+    <action
+        android:id="@+id/action_classesFragment_to_statisticsFragment"
+        app:destination="@id/statisticsFragment" />
+
+
+</navigation>
